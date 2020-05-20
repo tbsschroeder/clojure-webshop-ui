@@ -1,4 +1,4 @@
-(defproject webshop "0.1.0-SNAPSHOT"
+(defproject webshop-ui "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -22,7 +22,7 @@
                 ;; The presence of a :figwheel configuration here
                 ;; will cause figwheel to inject the figwheel client
                 ;; into your build
-                :figwheel {:on-jsload "webshop.core/on-js-reload"
+                :figwheel {:on-jsload "webshop-ui.core/on-js-reload"
                            :websocket-host "192.168.99.100"
                            ;; :open-urls will pop open your application
                            ;; in the default browser once Figwheel has
@@ -30,7 +30,7 @@
                            ;; Comment this out once it no longer serves you.
                            :open-urls ["http://localhost:3449/index.html"]}
 
-                :compiler {:main webshop.core
+                :compiler {:main webshop-ui.core
                            :target :bundle
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/out/index.js"
@@ -46,8 +46,8 @@
                ;; lein cljsbuild once min
                {:id "min"
                 :source-paths ["src"]
-                :compiler {:output-to "resources/public/js/compiled/webshop.js"
-                           :main webshop.core
+                :compiler {:output-to "resources/public/js/compiled/webshop-ui.js"
+                           :main webshop-ui.core
                            :optimizations :advanced
                            :pretty-print false}}]}
 
@@ -89,6 +89,10 @@
 
              ;; to pipe all the output to the repl
              ;; :server-logfile false
+
+             ;; if you need to watch files with polling instead of FS events
+             :hawk-options {:watcher :polling}
+             ;; ^ this can be useful in Docker environments
              }
 
   :profiles {:dev {:dependencies [[binaryage/devtools "1.0.0"]

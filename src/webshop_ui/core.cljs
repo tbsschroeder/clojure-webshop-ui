@@ -1,9 +1,9 @@
-(ns webshop.core
+(ns webshop-ui.core
     (:require ))
 
 (enable-console-print!)
 
-(println "This text is printed from src/webshop/core.cljs. Go ahead and edit it and see reloading in action.")
+(println "This text is printed from src/webshop-ui/core.cljs. Go ahead and edit it and see reloading in action.")
 
 ;; define your app data so that it doesn't get over-written on reload
 

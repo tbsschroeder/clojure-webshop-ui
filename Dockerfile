@@ -8,7 +8,6 @@ VOLUME /clj
 EXPOSE 3449
 # 7888 is the default nrepl port
 EXPOSE 7888
-# You wouldn't want the figwheel socket open in production!
 
 RUN lein deps
 RUN lein cljsbuild once
